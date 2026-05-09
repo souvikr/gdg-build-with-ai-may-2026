@@ -1,6 +1,7 @@
 # Serverless Document Processing Pipeline
 
 An event-driven document processing pipeline built on Google Cloud. This project demonstrates how to ingest files via Google Cloud Storage, trigger events via Pub/Sub, process data with a Python-based Cloud Run service, and store extracted metadata in BigQuery.
+Google Codelab: link https://codelabs.developers.google.com/build-and-deploy-gcp-with-antigravity?hl=en#0
 
 ## Architecture
 
