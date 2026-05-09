@@ -1,8 +1,12 @@
 #!/bin/bash
 set -e
 
-PROJECT_ID="gdg-mauritius-build-with-ai"
-REGION="us-central1"
+if [ -f .env ]; then
+  source .env
+else
+  echo "Error: .env file not found. Please create one based on the README."
+  exit 1
+fi
 
 # Corrected Resource Names based on requirements
 BUCKET_NAME="${PROJECT_ID}-doc-uploads"

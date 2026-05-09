@@ -16,7 +16,7 @@ Google Codelab: link https://codelabs.developers.google.com/build-and-deploy-gcp
 * `src/requirements.txt`: Python dependencies.
 * `Dockerfile`: Container configuration for the service.
 * `setup.sh`: Bash script for initial infrastructure provisioning (older version).
-* `fix_pipeline.sh`: The primary deployment script that sets up all GCP resources with the exact expected naming conventions and deploys the Cloud Run service.
+* `run_pipeline.sh`: The primary deployment script that sets up all GCP resources with the exact expected naming conventions and deploys the Cloud Run service.
 * `verify.sh`: A script to test the end-to-end pipeline by uploading a dummy document and querying BigQuery.
 * `query_bq.sh`: A helper script to view the BigQuery table schema and fetch recent rows.
 
@@ -40,10 +40,16 @@ Google Codelab: link https://codelabs.developers.google.com/build-and-deploy-gcp
    gcloud config set project [YOUR_PROJECT_ID]
    ```
 
-3. Run the deployment script. (Note: Modify the `PROJECT_ID` variable in `fix_pipeline.sh` before running if you are using a different project).
+3. Create a `.env` file in the root directory with your project details:
+   ```env
+   PROJECT_ID=gdg-mauritius-build-with-ai
+   REGION=us-central1
+   ```
+
+4. Run the deployment script:
    ```bash
-   chmod +x fix_pipeline.sh
-   ./fix_pipeline.sh
+   chmod +x run_pipeline.sh
+   ./run_pipeline.sh
    ```
 
 ## Testing the Pipeline

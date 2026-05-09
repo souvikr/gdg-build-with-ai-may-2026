@@ -18,7 +18,7 @@ except Exception as e:
 # BigQuery details from environment variables
 BQ_DATASET = os.environ.get('BQ_DATASET', 'doc_processing')
 BQ_TABLE = os.environ.get('BQ_TABLE', 'metadata')
-PROJECT_ID = os.environ.get('PROJECT_ID', 'gdg-mauritius-build-with-ai')
+PROJECT_ID = os.environ.get('PROJECT_ID')
 
 @app.route('/', methods=['POST'])
 def process_message():

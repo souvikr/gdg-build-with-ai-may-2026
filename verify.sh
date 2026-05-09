@@ -1,7 +1,12 @@
 #!/bin/bash
 set -e
 
-PROJECT_ID="gdg-mauritius-build-with-ai"
+if [ -f .env ]; then
+  source .env
+else
+  echo "Error: .env file not found."
+  exit 1
+fi
 BUCKET_NAME="${PROJECT_ID}-doc-uploads"
 
 echo "Creating a test document..."
